@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "coreumv2": {
+      "address": "0xf431303C990b3A68642954435C7625EB889C8002",
+      "startBlock": 19906098
+    }
+  }
+}

@@ -1,0 +1,44 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: coreumv2
+    network: mainnet
+    source:
+      address: "0xf431303C990b3A68642954435C7625EB889C8002"
+      abi: coreumv2
+      startBlock: 19906098
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ApplyReward
+        - Approval
+        - OwnershipTransferred
+        - SetCommunityAccount
+        - SetDBank
+        - Transfer
+        - UpdatePairs
+      abis:
+        - name: coreumv2
+          file: ./abis/coreumv2.json
+      eventHandlers:
+        - event: ApplyReward(indexed address,uint256)
+          handler: handleApplyReward
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: SetCommunityAccount(indexed address)
+          handler: handleSetCommunityAccount
+        - event: SetDBank(indexed address)
+          handler: handleSetDBank
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: UpdatePairs(indexed address,bool)
+          handler: handleUpdatePairs
+      file: ./src/coreumv-2.ts
