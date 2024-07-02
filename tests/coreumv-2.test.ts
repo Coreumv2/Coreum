@@ -17,11 +17,11 @@ import { createApplyRewardEvent } from "./coreumv-2-utils"
 
 describe("Describe entity assertions", () => {
   beforeAll(() => {
-    let account = Address.fromString(
+    const account = Address.fromString(
       "0x0000000000000000000000000000000000000001"
     )
-    let reward = BigInt.fromI32(234)
-    let newApplyRewardEvent = createApplyRewardEvent(account, reward)
+    const reward = BigInt.fromI32(234)
+    const newApplyRewardEvent = createApplyRewardEvent(account, reward)
     handleApplyReward(newApplyRewardEvent)
   })
 

@@ -12,11 +12,11 @@ import {
 
 export function createApplyRewardEvent(
   account: Address,
-  reward: BigInt
+  reward: bigint
 ): ApplyReward {
-  let applyRewardEvent = changetype<ApplyReward>(newMockEvent())
+  const applyRewardEvent = changetype<ApplyReward>(newMockEvent())
 
-  applyRewardEvent.parameters = new Array()
+  applyRewardEvent.parameters = []
 
   applyRewardEvent.parameters.push(
     new ethereum.EventParam("account", ethereum.Value.fromAddress(account))
@@ -31,11 +31,11 @@ export function createApplyRewardEvent(
 export function createApprovalEvent(
   owner: Address,
   spender: Address,
-  value: BigInt
+  value: bigint
 ): Approval {
-  let approvalEvent = changetype<Approval>(newMockEvent())
+  const approvalEvent = changetype<Approval>(newMockEvent())
 
-  approvalEvent.parameters = new Array()
+  approvalEvent.parameters = []
 
   approvalEvent.parameters.push(
     new ethereum.EventParam("owner", ethereum.Value.fromAddress(owner))
@@ -54,11 +54,11 @@ export function createOwnershipTransferredEvent(
   previousOwner: Address,
   newOwner: Address
 ): OwnershipTransferred {
-  let ownershipTransferredEvent = changetype<OwnershipTransferred>(
+  const ownershipTransferredEvent = changetype<OwnershipTransferred>(
     newMockEvent()
   )
 
-  ownershipTransferredEvent.parameters = new Array()
+  ownershipTransferredEvent.parameters = []
 
   ownershipTransferredEvent.parameters.push(
     new ethereum.EventParam(
@@ -76,9 +76,9 @@ export function createOwnershipTransferredEvent(
 export function createSetCommunityAccountEvent(
   account: Address
 ): SetCommunityAccount {
-  let setCommunityAccountEvent = changetype<SetCommunityAccount>(newMockEvent())
+  const setCommunityAccountEvent = changetype<SetCommunityAccount>(newMockEvent())
 
-  setCommunityAccountEvent.parameters = new Array()
+  setCommunityAccountEvent.parameters = []
 
   setCommunityAccountEvent.parameters.push(
     new ethereum.EventParam("account", ethereum.Value.fromAddress(account))
@@ -88,9 +88,9 @@ export function createSetCommunityAccountEvent(
 }
 
 export function createSetDBankEvent(account: Address): SetDBank {
-  let setDBankEvent = changetype<SetDBank>(newMockEvent())
+  const setDBankEvent = changetype<SetDBank>(newMockEvent())
 
-  setDBankEvent.parameters = new Array()
+  setDBankEvent.parameters = []
 
   setDBankEvent.parameters.push(
     new ethereum.EventParam("account", ethereum.Value.fromAddress(account))
@@ -102,11 +102,11 @@ export function createSetDBankEvent(account: Address): SetDBank {
 export function createTransferEvent(
   from: Address,
   to: Address,
-  value: BigInt
+  value: bigint
 ): Transfer {
-  let transferEvent = changetype<Transfer>(newMockEvent())
+  const transferEvent = changetype<Transfer>(newMockEvent())
 
-  transferEvent.parameters = new Array()
+  transferEvent.parameters = []
 
   transferEvent.parameters.push(
     new ethereum.EventParam("from", ethereum.Value.fromAddress(from))
@@ -125,9 +125,9 @@ export function createUpdatePairsEvent(
   account: Address,
   enable: boolean
 ): UpdatePairs {
-  let updatePairsEvent = changetype<UpdatePairs>(newMockEvent())
+  const updatePairsEvent = changetype<UpdatePairs>(newMockEvent())
 
-  updatePairsEvent.parameters = new Array()
+  updatePairsEvent.parameters = []
 
   updatePairsEvent.parameters.push(
     new ethereum.EventParam("account", ethereum.Value.fromAddress(account))

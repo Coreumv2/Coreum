@@ -18,7 +18,7 @@ import {
 } from "../generated/schema"
 
 export function handleApplyReward(event: ApplyRewardEvent): void {
-  let entity = new ApplyReward(
+  const entity = new ApplyReward(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.account = event.params.account
@@ -32,7 +32,7 @@ export function handleApplyReward(event: ApplyRewardEvent): void {
 }
 
 export function handleApproval(event: ApprovalEvent): void {
-  let entity = new Approval(
+  const entity = new Approval(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.owner = event.params.owner
@@ -49,7 +49,7 @@ export function handleApproval(event: ApprovalEvent): void {
 export function handleOwnershipTransferred(
   event: OwnershipTransferredEvent
 ): void {
-  let entity = new OwnershipTransferred(
+  const entity = new OwnershipTransferred(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.previousOwner = event.params.previousOwner
@@ -65,7 +65,7 @@ export function handleOwnershipTransferred(
 export function handleSetCommunityAccount(
   event: SetCommunityAccountEvent
 ): void {
-  let entity = new SetCommunityAccount(
+  const entity = new SetCommunityAccount(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.account = event.params.account
@@ -78,7 +78,7 @@ export function handleSetCommunityAccount(
 }
 
 export function handleSetDBank(event: SetDBankEvent): void {
-  let entity = new SetDBank(
+  const entity = new SetDBank(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.account = event.params.account
@@ -91,7 +91,7 @@ export function handleSetDBank(event: SetDBankEvent): void {
 }
 
 export function handleTransfer(event: TransferEvent): void {
-  let entity = new Transfer(
+  const entity = new Transfer(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.from = event.params.from
@@ -106,7 +106,7 @@ export function handleTransfer(event: TransferEvent): void {
 }
 
 export function handleUpdatePairs(event: UpdatePairsEvent): void {
-  let entity = new UpdatePairs(
+  const entity = new UpdatePairs(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.account = event.params.account

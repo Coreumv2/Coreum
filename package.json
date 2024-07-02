@@ -1,8 +1,11 @@
 {
   "name": "coreum-v-2",
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "codegen": "graph codegen",
+    "start": "node index.js",
     "build": "graph build",
     "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ coreum-v-2",
     "create-local": "graph create --node http://localhost:8020/ coreum-v-2",
@@ -12,7 +15,32 @@
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.77.0",
-    "@graphprotocol/graph-ts": "0.32.0"
+    "@graphprotocol/graph-ts": "^0.35.1",
+    "@oclif/core": "^4.0.7",
+    "axios": "^1.7.2",
+    "binary-install-raw": "^0.0.13",
+    "chart.js": "^4.4.3",
+    "choco": "^0.2.1",
+    "curl": "^0.1.4",
+    "ethers": "^6.13.1",
+    "gluegun": "^5.1.6",
+    "js-yaml": "^4.1.0",
+    "semver": "^7.6.2",
+    "socket.io": "^4.7.5",
+    "where": "^0.4.2"
   },
-  "devDependencies": { "matchstick-as": "0.5.0" }
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@eslint/compat": "^1.1.0",
+    "@eslint/js": "^9.6.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.6.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "express": "^4.19.2",
+    "globals": "^15.7.0",
+    "matchstick-as": "^0.6.0",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^7.14.1"
+  }
 }
